@@ -2,13 +2,14 @@
 
 int volatile contador=0;
 
-DigitalOut myled1(PA_10);//D2
-DigitalOut myled2(PB_5);//D4
+DigitalOut myled1(PA_10);//D2 = MSB
+DigitalOut myled2(PB_5);//D4 
 DigitalOut myled3(PB_4);//D5
-DigitalOut myled4(PB_10);//D6
+DigitalOut myled4(PB_10);//D6 = LSB
 
-InterruptIn myBoton(PC_13); //PC_13 Boton tarjeta  
-//InterruptIn myBoton(PB_3,PullUp);  // otro pin PB_3 solo para PB_3=D3
+InterruptIn myBoton(PC_13); //Uso pin PC_13 Boton tarjeta  
+//InterruptIn myBoton(PB_3,PullUp);  // Uso otro pin PB_3=D3 con PullUp 
+//InterruptIn myBoton(PB_3);  // Uso otro pin PB_3=D3 sin PullUp
 
 void Funcion_interrupcion(){
     myled4 = (contador & 0x01);
