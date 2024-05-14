@@ -18,7 +18,6 @@ void Funcion_interrupcion(){
     contador++;
 }
 
-// main() runs in its own thread in the OS
 int main()
 {
  myBoton.fall(&Funcion_interrupcion);
